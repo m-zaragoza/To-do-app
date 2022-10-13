@@ -13,11 +13,9 @@ const AllTodos = () => {
             };
             return (
                 <>
-
                     <EachTodo
                         key={id}
                         todos={todos} />
-
                 </>
             )
         }
