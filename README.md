@@ -80,6 +80,31 @@ As a user,
 so that I can see my todos on different devices,
 I want the todo app to be responsive.
 ```
+### Component hierarchy 
+Common to every page:
+- pink: whole page
+- yellow: header
+- blue: footer
+
+All todos page:
+- green: every to-do component
+- purple: each individual to-do
+![to-do list](/images/todoList.PNG)
+
+Add to-do page:
+- purple: to-do form component
+![add to-do](/images/addTodo.PNG)
+Edit page:
+- red: editing form component
+![edit to-do](/images/edit.PNG)
+Sign-up page:
+- green: sign-up form component
+- orange: go to sign-in component
+![register](/images/signUp.PNG)
+Login page:
+- red: login form component
+- purple: go to sign-up component
+![login](/images/login.PNG)
 </br></br>
 
 ## Project review
