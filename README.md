@@ -105,6 +105,9 @@ Login page:
 - red: login form component
 - purple: go to sign-up component
 ![login](/images/login.PNG)
+
+### App architecture
+![app architecture](/images/appArchitecture.PNG)
 </br></br>
 
 ## Project review
@@ -113,3 +116,4 @@ Login page:
 
 ## Acknowledgements 
 Trello- https://trello.com/
+Moqups- https://app.moqups.com/

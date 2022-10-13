@@ -7,4 +7,7 @@ Write user stories
 
 Product backlog\
 Create repo\
-Wireframes
+Wireframes\
+App architecture\
+Component tree\
+Created DB on atlas
