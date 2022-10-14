@@ -10,4 +10,11 @@ Create repo\
 Wireframes\
 App architecture\
 Component tree\
-Created DB on atlas
+Created DB on atlas\
+EachTodo and AllTodos test passing with mock data\
+
+14/10/22
+Identify state and where should live\
+Todos as state\
+Adjust test to async call
+
