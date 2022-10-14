@@ -16,5 +16,10 @@ EachTodo and AllTodos test passing with mock data\
 14/10/22
 Identify state and where should live\
 Todos as state\
-Adjust test to async call
+Adjust test to async call\
+Basic server set up
+
+
+
+
 

@@ -21,7 +21,7 @@ const AllTodos = () => {
     return (
         todos.map(todo => {
             const { id, body, todoStatus, deadline } = todo;
-            const todos = {
+            const todosProps = {
                 id,
                 body,
                 todoStatus,
@@ -30,8 +30,8 @@ const AllTodos = () => {
             return (
                 <>
                     <EachTodo
-                        key={id}
-                        todos={todos} />
+                        // key={id}
+                        todosProps={todosProps} />
                 </>
             )
         }
