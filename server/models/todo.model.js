@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema({
+    _id: {
+
+    },
     user: {
         type: String,
         required: true

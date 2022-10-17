@@ -18,7 +18,7 @@ const main = async () => {
     });
 };
 
-main()
+await main()
     .catch(err => console.log(err));
 
 const server = app.listen(port, host, () => {

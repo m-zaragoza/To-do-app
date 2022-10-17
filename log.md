@@ -22,7 +22,7 @@ Atlas DB populated\
 
 17/10/22\
 DB and server connected\
-
+beforeEach mongoose timeout issue- solved adding await before the call to main()\
 
 
 

@@ -10,21 +10,21 @@ chai.use(chaiHttp);
 
 describe(`Server tests with to-do collection`, () => {
 
-    // beforeEach(async () => {
-    //     await Todo.deleteMany()
-    //         .then(() => console.log(`Todos collection cleared`))
-    //         .catch(err => {
-    //             console.log(`Unable to clear todos`);
-    //             throw new Error();
-    //         });
+    beforeEach(async () => {
+        await Todo.deleteMany()
+            .then(() => console.log(`Todos collection cleared`))
+            .catch(err => {
+                console.log(`Unable to clear todos ${err}`);
+                throw new Error();
+            });
 
-    //     await Peep.insertMany(mockTodos)
-    //         .then(() => console.log(`Collection populated with mock todos`))
-    //         .catch(err => {
-    //             console.log(`Unable to insert todos`);
-    //             throw new Error();
-    //         });
-    // });
+        await Todo.insertMany(mockTodos)
+            .then(() => console.log(`Collection populated with mock todos`))
+            .catch(err => {
+                console.log(`Unable to insert todos`);
+                throw new Error();
+            });
+    });
 
     describe(`index route tests`, () => {
 
