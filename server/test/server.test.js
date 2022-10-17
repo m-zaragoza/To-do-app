@@ -14,14 +14,14 @@ describe(`Server tests with to-do collection`, () => {
         await Todo.deleteMany()
             .then(() => console.log(`Todos collection cleared`))
             .catch(err => {
-                console.log(`Unable to clear todos ${err}`);
+                console.log(`Unable to clear todos: ${err}`);
                 throw new Error();
             });
 
         await Todo.insertMany(mockTodos)
             .then(() => console.log(`Collection populated with mock todos`))
             .catch(err => {
-                console.log(`Unable to insert todos`);
+                console.log(`Unable to insert todos: ${err}`);
                 throw new Error();
             });
     });

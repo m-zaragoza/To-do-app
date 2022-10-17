@@ -2,12 +2,12 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import EachTodo from './EachTodo';
 
-const AllTodos = () => {
+const AllTodos = ({ url }) => {
 
     const [todos, setTodos] = useState([]);
 
     const getTodos = async () => {
-        const res = await axios.get(`http://localhost:4000/todos`);
+        const res = await axios.get(url);
         return res.data;
     };
 

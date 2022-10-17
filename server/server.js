@@ -1,3 +1,4 @@
+import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
@@ -9,6 +10,8 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 const app = express();
 const port = process.env.PORT;
 const host = process.env.HOST;
+
+app.use(cors());
 
 app.use(`/`, allTodos);
 
