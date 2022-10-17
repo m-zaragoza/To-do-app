@@ -11,7 +11,7 @@ function App() {
         <h1>Your to-do list</h1>
         <AllTodos url={url} />
       </div>
-      <AddTodo />
+      <AddTodo url={url} />
     </>
   );
 }

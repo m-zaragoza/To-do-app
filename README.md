@@ -37,6 +37,11 @@ I want to be able to add tasks to my to-do list.
 ```
 ```
 As a user,
+so that I meet my deadlines,
+I want to be able to add a due date on my todos.
+```
+```
+As a user,
 so that I can see progress,
 I want to be able to mark tasks as 'in progress'.
 ```
@@ -49,11 +54,6 @@ I want to be able to mark tasks as 'done'.
 As a user, 
 so that I can keep my list tidy,
 I want to be able to delete todos.
-```
-```
-As a user,
-so that I meet my deadlines,
-I want to be able to add a due date on my todos.
 ```
 ```
 As a user,
@@ -122,3 +122,4 @@ Login page:
 ## Acknowledgements 
 - Trello- https://trello.com/
 - Moqups- https://app.moqups.com/
+- React Date-Picker- https://www.npmjs.com/package/react-date-picker
