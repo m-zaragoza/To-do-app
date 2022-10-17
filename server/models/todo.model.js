@@ -1,4 +1,4 @@
-import mongoose, { trusted } from "mongoose";
+import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema({
     user: {

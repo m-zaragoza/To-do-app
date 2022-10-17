@@ -13,12 +13,17 @@ Component tree\
 Created DB on atlas\
 EachTodo and AllTodos test passing with mock data\
 
-14/10/22
+14/10/22\
 Identify state and where should live\
 Todos as state\
 Adjust test to async call\
 Basic server set up\
-Atlas DB populated
+Atlas DB populated\
+
+17/10/22\
+DB and server connected\
+
+
 
 
 
