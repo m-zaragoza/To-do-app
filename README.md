@@ -27,6 +27,11 @@ Style- Bootstrap + CSS
 The below stories are in order of importance, with the most important first.
 ```
 As a user,
+so that I know what I need to do,
+I want to be able to see all the tasks in my to-do list.
+```
+```
+As a user,
 so that I know what I need to do, 
 I want to be able to add tasks to my to-do list.
 ```

@@ -17,7 +17,8 @@ EachTodo and AllTodos test passing with mock data\
 Identify state and where should live\
 Todos as state\
 Adjust test to async call\
-Basic server set up
+Basic server set up\
+Atlas DB populated
 
 
 
