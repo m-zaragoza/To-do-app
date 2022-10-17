@@ -14,4 +14,10 @@ describe(`Add to-do tests`, () => {
         expect(button).toBeInTheDocument();
     });
 
+    it(`should have the expected heading`, () => {
+        const heading = screen.getByRole(`heading`);
+
+        expect(heading.textContent).toContain(`What do you need to do`);
+    })
+
 });
