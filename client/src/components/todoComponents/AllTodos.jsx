@@ -1,22 +1,6 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 import EachTodo from './EachTodo';
 
-const AllTodos = ({ url }) => {
-
-    const [todos, setTodos] = useState([]);
-
-    const getTodos = async () => {
-        const res = await axios.get(url);
-        return res.data;
-    };
-
-    useEffect(() => {
-        const getData = async () => {
-            setTodos(await getTodos());
-        }
-        getData();
-    }, []);
+const AllTodos = ({ todos }) => {
 
     return (
         todos.map(todo => {
@@ -30,7 +14,6 @@ const AllTodos = ({ url }) => {
             return (
                 <>
                     <EachTodo
-                        // key={id}
                         todosProps={todosProps} />
                 </>
             )
