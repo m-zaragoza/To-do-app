@@ -2,12 +2,13 @@ import { render, screen } from "@testing-library/react"
 import axiosMock from 'axios';
 import userEvent from "@testing-library/user-event";
 import { act } from "react-dom/test-utils";
+import { MemoryRouter } from 'react-router-dom';
 import EditTodo from '../components/todoComponents/EditTodo';
 
 describe(`Edit to-do tests`, () => {
 
     beforeEach(() => {
-        render(<EditTodo />)
+        render(<MemoryRouter><EditTodo /></MemoryRouter>)
     });
 
     it(`should render the edit to-do form`, () => {
@@ -29,17 +30,17 @@ describe(`Edit to-do tests`, () => {
         expect(deleteBtn).toBeInTheDocument();
     });
 
-    xit(`should call mock delete once`, () => {
-        const deleteBtn = screen.getByDisplayValue(/delete/i);
+    // it(`should call mock delete once`, () => {
+    //     const deleteBtn = screen.getByDisplayValue(/delete/i);
 
-        act(() => {
-            userEvent.click(deleteBtn);
-        });
+    //     act(() => {
+    //         userEvent.click(deleteBtn);
+    //     });
 
-        expect(axiosMock.delete).toHaveBeenCalledTimes(1);
-    });
+    //     expect(axiosMock.delete).toHaveBeenCalledTimes(1);
+    // });
 
-    xit(`should call mock put once`, () => {
+    it(`should call mock put once`, () => {
         const mockBody = `I'm an edit`;
 
         const submit = screen.getByDisplayValue(/confirm changes/i);

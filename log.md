@@ -30,7 +30,9 @@ Stateful add to-do working\
 
 18/10/2022
 Add route tested and working\
-
+Edit view static\
+Routed application\
+Stateful edit view\
 
 
 
