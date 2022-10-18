@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import axiosMock from 'axios';
 import userEvent from '@testing-library/user-event';
-
-import AddTodo from '../components/todoComponents/AddTodo';
 import { act } from 'react-dom/test-utils';
+import AddTodo from '../components/todoComponents/AddTodo';
+
 
 describe(`Add to-do tests`, () => {
 

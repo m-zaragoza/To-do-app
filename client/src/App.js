@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import AllTodos from './components/todoComponents/AllTodos';
 import AddTodo from './components/todoComponents/AddTodo';
+import EditTodo from './components/todoComponents/EditTodo';
 
 function App() {
 
@@ -29,9 +30,10 @@ function App() {
         <AllTodos todos={todos} />
       </div>
       <AddTodo url={url} />
+      <EditTodo url={url} />
     </>
   );
-}
+};
 
 export default App;
 
