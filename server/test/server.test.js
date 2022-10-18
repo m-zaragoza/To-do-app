@@ -5,7 +5,7 @@ import { describe } from "mocha";
 import server from "../server.js";
 import Todo from "../models/todo.model.js";
 import mockTodos from "./mockData/mockTodos.js";
-import { goodTodo } from "./mockData/testInputs.js"
+import { goodTodo, badTodo } from "./mockData/testInputs.js"
 
 chai.use(chaiHttp);
 
@@ -49,6 +49,16 @@ describe(`Server tests with to-do collection`, () => {
             expect(res).to.have.status(201);
             expect(res.body).to.be.an(`object`);
             expect(res.body).to.have.property(`message`, `To-do added successfully`);
+        });
+
+        it(`should have 422 status when to-do is not added`, async () => {
+            const res = await chai.request(server)
+                .post(`/add`)
+                .send(badTodo);
+
+            expect(res).to.have.status(422);
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `Unable to add to-do`);
         })
-    })
+    });
 });
