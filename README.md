@@ -67,13 +67,13 @@ I want to be able to delete todos.
 ```
 ```
 As a user,
-so that I can see what needs to be done at a glance,
-I want to be able to filter my to-do list.
+so that I can prioritise,
+I want to see my todos in order with the closest due date first.
 ```
 ```
 As a user,
-so that I can prioritise,
-I want to see my todos in order with the closest due date first.
+so that I can see what needs to be done at a glance,
+I want to be able to filter my to-do list.
 ```
 ```
 As a user, 

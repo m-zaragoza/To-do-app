@@ -37,6 +37,17 @@ describe(`Server tests with to-do collection`, () => {
             expect(res.body).to.be.an(`array`);
             expect(res.body.length).to.be.equal(mockTodos.length);
         });
+
+        it(`should return the todos in order by due date`, async () => {
+            const res = await chai.request(server)
+                .get(`/`)
+
+            expect(res.body[0].body).to.be.equal(`Follow TDD`);
+            expect(res.body[1].body).to.be.equal(`Commit often`);
+            expect(res.body[2].body).to.be.equal(`Open pull request`);
+            expect(res.body[3].body).to.be.equal(`Think in React`);
+            expect(res.body[4].body).to.be.equal(`Add, commit, push, repeat!`);
+        });
     });
 
     describe(`add to-do route tests`, () => {

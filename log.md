@@ -38,6 +38,13 @@ Stateful edit view\
 Edit route tested for GET req\
 Tested for PUT req\
 Tested for DELETE req\
+GET req returns todos with the closest due date first\
+\
+9 first user stories completed WITHOUT styling.\
+Next:
+- 3 remaining user stories\
+- header and footer\
+- styling with responsiveness
 
 
 

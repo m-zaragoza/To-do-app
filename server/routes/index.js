@@ -6,7 +6,7 @@ export const router = express.Router();
 router.route(`/`)
     .get((req, res) => {
 
-        Todo.find((error, todos) => {
+        Todo.find().sort({ deadline: 1 }).find((error, todos) => {
             error ? res.status(404).send(`Todos not found`) : res.json(todos);
         });
     });
