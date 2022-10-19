@@ -20,7 +20,7 @@ const EditTodo = ({ url }) => {
             await axios.get(`${url}/edit/${_id}`)
                 .then(response => {
                     const res = response.data;
-                    // setUser(res.user);
+                    // setUser(res.user);  
                     setBody(res.body);
                     setTodoStatus(res.todoStatus);
                     setDeadline(res.deadline);
@@ -46,7 +46,14 @@ const EditTodo = ({ url }) => {
         await axios.put(`${url}/edit/${_id}`, todo);
     };
 
-    const deleteHandler = () => { };
+    const deleteHandler = e => {
+        e.preventDefault();
+        deleteTodo();
+    };
+
+    const deleteTodo = async () => {
+        await axios.delete(`${url}/edit/${_id}`);
+    }
 
     return (
         <>

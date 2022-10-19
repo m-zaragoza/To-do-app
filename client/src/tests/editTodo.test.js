@@ -30,15 +30,15 @@ describe(`Edit to-do tests`, () => {
         expect(deleteBtn).toBeInTheDocument();
     });
 
-    // it(`should call mock delete once`, () => {
-    //     const deleteBtn = screen.getByDisplayValue(/delete/i);
+    it(`should call mock delete once`, () => {
+        const deleteBtn = screen.getByDisplayValue(/delete/i);
 
-    //     act(() => {
-    //         userEvent.click(deleteBtn);
-    //     });
+        act(() => {
+            userEvent.click(deleteBtn);
+        });
 
-    //     expect(axiosMock.delete).toHaveBeenCalledTimes(1);
-    // });
+        expect(axiosMock.delete).toHaveBeenCalledTimes(1);
+    });
 
     it(`should call mock put once`, () => {
         const mockBody = `I'm an edit`;

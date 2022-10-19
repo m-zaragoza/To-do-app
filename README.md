@@ -51,11 +51,6 @@ so that I can keep track of what has been done already,
 I want to be able to mark tasks as 'done'.
 ```
 ```
-As a user, 
-so that I can keep my list tidy,
-I want to be able to delete todos.
-```
-```
 As a user,
 so that I can correct mistakes,
 I want to be able to edit my todo's text.
@@ -64,6 +59,11 @@ I want to be able to edit my todo's text.
 As a user,
 so that I can correct mistakes,
 I want to be able to edit my todo's due date.
+```
+```
+As a user, 
+so that I can keep my list tidy,
+I want to be able to delete todos.
 ```
 ```
 As a user,
