@@ -2,13 +2,14 @@ import { render, screen } from '@testing-library/react';
 import axiosMock from 'axios';
 import userEvent from '@testing-library/user-event';
 import { act } from 'react-dom/test-utils';
+import { MemoryRouter } from 'react-router-dom';
 import AddTodo from '../components/todoComponents/AddTodo';
 
 
 describe(`Add to-do tests`, () => {
 
     beforeEach(() => {
-        render(<AddTodo />)
+        render(<MemoryRouter><AddTodo /></MemoryRouter>)
     });
 
     it(`should render the add to-do form`, () => {

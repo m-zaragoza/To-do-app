@@ -59,6 +59,81 @@ describe(`Server tests with to-do collection`, () => {
             expect(res).to.have.status(422);
             expect(res.body).to.be.an(`object`);
             expect(res.body).to.have.property(`message`, `Unable to add to-do`);
-        })
+        });
+    });
+
+    describe(`Edit route tests`, () => {
+
+        it(`should return a specific to-do`, async () => {
+            const res = await chai.request(server)
+                .get(`/`)
+
+            const _id = res.body[0]._id;
+            const body = res.body[0].body;
+
+            const res1 = await chai.request(server)
+                .get(`/edit/${_id}`)
+
+            expect(res1).to.have.status(200);
+            expect(res1.body).to.be.an(`object`);
+            expect(res1.body.body).to.be.equal(body);
+        });
+
+        it(`should have status 404 when the to-do can't be found`, async () => {
+            const res = await chai.request(server)
+                .get(`/edit/404badTodoID`)
+
+            expect(res).to.have.status(404);
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `To-do not found`);
+        });
+
+        it(`should have status 201 when the to-do updates successfully`, async () => {
+            const res = await chai.request(server)
+                .get(`/`)
+
+            const _id = res.body[0]._id;
+            const body = `I've been updated`;
+            const todoStatus = `In progress`;
+            const deadline = res.body[0].deadline;
+            const putReq = { _id, body, todoStatus, deadline };
+
+            const res1 = await chai.request(server)
+                .put(`/edit/${_id}`)
+                .send(putReq)
+
+            expect(res1).to.have.status(201);
+            expect(res1.body).to.be.an(`object`);
+            expect(res1.body).to.have.property(`message`, `To-do updated successfully`);
+        });
+
+        it(`should have 400 when to-do can't be updated`, async () => {
+            const res = await chai.request(server)
+                .get(`/`)
+
+            const _id = res.body[0]._id;
+            const body = `~~I've been updated`;
+            const todoStatus = `In progress`;
+            const deadline = res.body[0].deadline;
+            const putReq = { _id, body, todoStatus, deadline };
+
+            const res1 = await chai.request(server)
+                .put(`/edit/${_id}`)
+                .send(putReq)
+
+            expect(res1).to.have.status(400);
+            expect(res1.body).to.be.an(`object`);
+            expect(res1.body).to.have.property(`message`, `Unable to update to-do`);
+        });
+
+        it(`should have 404 status when the to-do can't be found`, async () => {
+            const res = await chai.request(server)
+                .put(`/edit/404badTodoID`)
+                .send({})
+
+            expect(res).to.have.status(404);
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `To-do not found`);
+        });
     });
 });

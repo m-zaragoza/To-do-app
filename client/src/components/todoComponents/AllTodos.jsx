@@ -1,12 +1,12 @@
 import EachTodo from './EachTodo';
 
 const AllTodos = ({ todos }) => {
-
+    // console.log(todos);
     return (
         todos.map(todo => {
-            const { id, body, todoStatus, deadline } = todo;
+            const { _id, body, todoStatus, deadline } = todo;
             const todosProps = {
-                id,
+                _id,
                 body,
                 todoStatus,
                 deadline

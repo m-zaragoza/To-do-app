@@ -1,5 +1,6 @@
 // import './App.css';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import AllTodos from './components/todoComponents/AllTodos';
 import AddTodo from './components/todoComponents/AddTodo';
@@ -24,14 +25,18 @@ function App() {
   }, []);
 
   return (
-    <>
-      <div>
-        <h1>Your to-do list</h1>
-        <AllTodos todos={todos} />
-      </div>
-      <AddTodo url={url} />
-      <EditTodo url={url} />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<>
+          <div>
+            <h1>Your to-do list</h1>
+            <AllTodos todos={todos} />
+          </div>
+        </>} />
+        <Route path="/add" element={<AddTodo url={url} />} />
+        <Route path="/edit/:_id" element={<EditTodo url={url} />} />
+      </Routes>
+    </Router>
   );
 };
 
