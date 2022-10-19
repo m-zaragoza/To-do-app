@@ -21,8 +21,12 @@ const AddTodo = ({ url }) => {
     };
 
     const postTodo = async todo => {
-        await axios.post(`${url}/add`, todo);
-        resetTodo();
+        try {
+            await axios.post(`${url}/add`, todo);
+            resetTodo();
+        } catch (err) {
+            alert(`Something went wrong: ${err.message}`);
+        }
     };
 
     const resetTodo = () => {

@@ -35,7 +35,9 @@ Routed application\
 Stateful edit view\
 
 19/10/2022\
-Edit route tested for PUT req\
+Edit route tested for GET req\
+Tested for PUT req\
+Tested for DELETE req\
 
 
 

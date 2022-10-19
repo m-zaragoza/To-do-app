@@ -43,7 +43,11 @@ const EditTodo = ({ url }) => {
     };
 
     const putTodo = async todo => {
-        await axios.put(`${url}/edit/${_id}`, todo);
+        try {
+            await axios.put(`${url}/edit/${_id}`, todo);
+        } catch (err) {
+            alert(`Something went wrong: ${err.message}`);
+        }
     };
 
     const deleteHandler = e => {
@@ -52,8 +56,12 @@ const EditTodo = ({ url }) => {
     };
 
     const deleteTodo = async () => {
-        await axios.delete(`${url}/edit/${_id}`);
-    }
+        try {
+            await axios.delete(`${url}/edit/${_id}`);
+        } catch (err) {
+            alert(`Something went wrong: ${err.message}`);
+        }
+    };
 
     return (
         <>

@@ -27,4 +27,15 @@ router.route(`/:_id`)
                 res.status(404).json({ "message": "To-do not found" });
             }
         });
+    })
+    .delete((req, res) => {
+        const _id = req.params._id;
+
+        Todo.findByIdAndDelete(_id, (err, todo) => {
+            if (todo) {
+                res.status(204).json();
+            } else {
+                res.status(404).json({ "message": "To-do not found" });
+            }
+        });
     });
