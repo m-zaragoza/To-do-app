@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
 const EachTodo = ({ todosProps }) => {
-    // console.log(todosProps);
     const { _id, body, todoStatus, deadline } = todosProps;
 
     return (<>

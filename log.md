@@ -46,6 +46,11 @@ Next:
 - header and footer\
 - styling with responsiveness
 
+26/10/2022\
+Rejig app tree\
+Add FILTER component\
+Move data call to filter\
+
 
 
 
