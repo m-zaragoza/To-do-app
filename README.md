@@ -19,7 +19,11 @@ Style- Bootstrap + CSS
 </br></br>
 
 ## Getting started
-
+To run this project on your machine, first clone this repo and then follow these steps:\
+1- Navigate to the _client_ folder on your terminal and run npm i.\
+2- Repeat the previous step but on _server_ folder.\
+3- Run `npm start` on each on the folders, on separate terminals.\
+4- The project is ready to view on your browser, port 3000.
 </br></br>
 
 ## Problem statements
@@ -111,12 +115,23 @@ Login page:
 - purple: go to sign-up component
 ![login](/images/login.PNG)
 
+### Component tree
+![component tree](/images/componentTree.png)
+
 ### App architecture
 ![app architecture](/images/appArchitecture.PNG)
 </br></br>
 
 ## Project review
+It's 28/10 and I'm putting this project on pause to prepare for my first Software Engineer position! 
+Here is an overview of the progress I've been doing: [Project log.](log.md)
 
+At the moment, the project meet all the basic functionality described on the user stories, apart from showing only the to-do's belonging to the logged in user and being responsive (or any styling, for that matter). 
+
+Once I'm settled and reprise this project, I'll first complete the user stories as described above, plus add the header and footer.\
+Then I'd like to add some nicer navigation to the app, like navigating to the to-do list once the user logs in, or navigating to login when the user registers.\
+I'll then re-do the user's system to use JWT (json web tokens).\
+Finally, I'll deploy my app.
 </br></br>
 
 ## Acknowledgements 
