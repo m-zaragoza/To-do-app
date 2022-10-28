@@ -5,6 +5,7 @@ import { describe } from "mocha";
 import server from "../server.js";
 import Todo from "../models/todo.model.js";
 import mockTodos from "./mockData/mockTodos.js";
+import mockUsers from "./mockData/mockUsers.js";
 import { goodTodo, badTodo } from "./mockData/testInputs.js"
 
 chai.use(chaiHttp);
@@ -173,8 +174,30 @@ describe(`Server tests with to-do collection`, () => {
                 expect(res).to.have.status(404);
                 expect(res.body).to.be.an(`object`);
                 expect(res.body).to.have.property(`message`, `To-do not found`);
-            })
-        })
+            });
+        });
+    });
+});
+
+describe(`Server tests with users collection`, () => {
+
+    beforeEach(async () => {
+        await User.deleteMany()
+            .then(() => console.log(`Users collection cleared`))
+            .catch(err => {
+                console.log(`Unable to clear users: ${err}`);
+                throw new Error();
+            });
+
+        await User.insertMany(mockUsers)
+            .then(() => console.log(`Collection populated with mock users`))
+            .catch(err => {
+                console.log(`Unable to insert users: ${err}`);
+                throw new Error();
+            });
+    });
+
+    describe(``, () => {
 
     });
 });

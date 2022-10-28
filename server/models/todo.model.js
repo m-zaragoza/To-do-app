@@ -8,7 +8,7 @@ const todoSchema = new mongoose.Schema({
     body: {
         type: String,
         required: true,
-        match: [/^[a-zA-Z0-9!?.@_', ]*$/]
+        match: /^[a-zA-Z0-9!?.@_', ]*$/
     },
     todoStatus: {
         type: String,
