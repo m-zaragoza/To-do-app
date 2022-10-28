@@ -5,7 +5,7 @@ import { act } from "react-dom/test-utils";
 import { MemoryRouter } from 'react-router-dom';
 import EditTodo from '../components/todoComponents/EditTodo';
 
-describe(`Edit to-do tests`, () => {
+xdescribe(`Edit to-do tests`, () => {
 
     beforeEach(() => {
         render(<MemoryRouter><EditTodo /></MemoryRouter>)

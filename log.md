@@ -51,6 +51,12 @@ Rejig app tree\
 Add FILTER component\
 Move data call to filter\
 
+27/10/22\
+Implement filter functionality\
+Sorted issues re-rendering the chosen filter\
+
+28/10/2022\
+
 
 
 

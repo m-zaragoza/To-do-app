@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
+import morgan from 'morgan';
 
 import { router as allTodos } from './routes/index.js';
 import { router as addTodo } from './routes/add.js';
@@ -16,6 +17,7 @@ const host = process.env.HOST;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(morgan(`tiny`));
 
 app.use(`/`, allTodos);
 app.use(`/add`, addTodo);

@@ -26,7 +26,7 @@ const EditTodo = ({ url }) => {
                     setId(res._id);
                 })
         } catch (err) {
-            console.log(err);
+            console.log(`Something went wrong: ${err.message}`);
             return [];
         }
     };
@@ -71,7 +71,7 @@ const EditTodo = ({ url }) => {
                 </div>
                 <div className="pt-3 ps-5 ms-1 row">
                     <DatePicker selected={deadline} onChange={date => setDeadline(date)} />
-                    <select className="form-select" defaultValue={todoStatus} onChange={e => (e.target.value)}>
+                    <select className="form-select" defaultValue={todoStatus} onChange={e => setTodoStatus(e.target.value)}>
                         <option hidden >Status</option>
                         <option value="new">New</option>
                         <option value="in progress">In progress</option>

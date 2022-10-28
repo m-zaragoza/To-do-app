@@ -32,7 +32,7 @@
             "id": "5",
             "user": "mooney@email.com",
             "body": "Open pull request",
-            "todoStatus": "new",
+            "todoStatus": "in progress",
             "deadline": "2022-11-13T15:00:00.000Z"
         }
     ]
