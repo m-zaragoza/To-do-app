@@ -44,7 +44,7 @@ const Register = ({ url }) => {
                 <form onSubmit={submitHandler}>
                     <div className="mb-3">
                         <label htmlFor="emailAddress" className="form-label">Your email</label>
-                        <input id="emailAddress" type="email" className="form-control" name="email" value={user.email} onChange={userHandler} required />
+                        <input id="emailAddress" type="email" className="form-control" name="user" value={user.user} onChange={userHandler} required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Choose a password</label>

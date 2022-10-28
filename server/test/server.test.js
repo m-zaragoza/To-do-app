@@ -4,9 +4,10 @@ import { describe } from "mocha";
 
 import server from "../server.js";
 import Todo from "../models/todo.model.js";
+import User from "../models/user.model.js";
 import mockTodos from "./mockData/mockTodos.js";
 import mockUsers from "./mockData/mockUsers.js";
-import { goodTodo, badTodo } from "./mockData/testInputs.js"
+import { goodTodo, badTodo, goodUser, existingUser, badPassword } from "./mockData/testInputs.js";
 
 chai.use(chaiHttp);
 
@@ -197,7 +198,35 @@ describe(`Server tests with users collection`, () => {
             });
     });
 
-    describe(``, () => {
+    describe(`register route tests`, () => {
 
+        it(`should have status 200 when the user is registered correctly`, async () => {
+            const res = await chai.request(server)
+                .post(`/register`)
+                .send(goodUser);
+
+            expect(res).to.have.status(200);
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `You are registered successfully`);
+        });
+
+        it(`should not register when the user already exist and alert`, async () => {
+            const res = await chai.request(server)
+                .post(`/register`)
+                .send(existingUser);
+
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `This user already exists`);
+        });
+
+        it(`should have status 422 when the password doesn't meet the requirements`, async () => {
+            const res = await chai.request(server)
+                .post(`/register`)
+                .send(badPassword);
+
+            expect(res).to.have.status(422);
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `Unable to register`);
+        });
     });
 });

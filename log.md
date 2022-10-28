@@ -56,7 +56,9 @@ Implement filter functionality\
 Sorted issues re-rendering the chosen filter\
 
 28/10/2022\
-users collection setup\
+Users collection setup\
+Register- client side\
+
 
 
 
