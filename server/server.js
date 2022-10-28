@@ -9,6 +9,7 @@ import { router as allTodos } from './routes/index.js';
 import { router as addTodo } from './routes/add.js';
 import { router as editTodo } from './routes/edit.js';
 import { router as register } from './routes/register.js';
+import { router as login } from './routes/login.js';
 
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
@@ -24,6 +25,7 @@ app.use(`/`, allTodos);
 app.use(`/add`, addTodo);
 app.use(`/edit`, editTodo);
 app.use(`/register`, register);
+app.use(`/login`, login);
 
 const main = async () => {
     await mongoose.connect(process.env.DB_URI).then(res => {

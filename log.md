@@ -58,6 +58,9 @@ Sorted issues re-rendering the chosen filter\
 28/10/2022\
 Users collection setup\
 Register- client side\
+Register- server side\
+Login- client side\
+
 
 
 

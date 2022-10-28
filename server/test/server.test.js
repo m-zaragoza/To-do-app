@@ -7,7 +7,7 @@ import Todo from "../models/todo.model.js";
 import User from "../models/user.model.js";
 import mockTodos from "./mockData/mockTodos.js";
 import mockUsers from "./mockData/mockUsers.js";
-import { goodTodo, badTodo, goodUser, existingUser, badPassword } from "./mockData/testInputs.js";
+import { goodTodo, badTodo, goodUser, existingUser, badPassword, goodLogin, wrongEmail, wrongPassword } from "./mockData/testInputs.js";
 
 chai.use(chaiHttp);
 
@@ -229,4 +229,36 @@ describe(`Server tests with users collection`, () => {
             expect(res.body).to.have.property(`message`, `Unable to register`);
         });
     });
+
+    describe(`login route tests`, () => {
+
+        it(`should have status 200 when the user logs in correctly`, async () => {
+
+            const res = await chai.request(server)
+                .post(`/login`)
+                .send(goodLogin);
+
+            expect(res).to.have.status(200);
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `Good to see you again`);
+        });
+
+        it(`should alert when the user doesn't exist`, async () => {
+            const res = await chai.request(server)
+                .post(`/login`)
+                .send(wrongEmail);
+
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `Details not found`);
+        });
+
+        it(`should alert when the password incorrect`, async () => {
+            const res = await chai.request(server)
+                .post(`/login`)
+                .send(wrongPassword);
+
+            expect(res.body).to.be.an(`object`);
+            expect(res.body).to.have.property(`message`, `Details not found`);
+        });
+    })
 });

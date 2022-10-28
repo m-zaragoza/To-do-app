@@ -27,3 +27,18 @@ export const badPassword = {
     password: `password`
 };
 
+export const goodLogin = {
+    user: `mooney@email.com`,
+    password: `luPin88!`
+};
+
+export const wrongEmail = {
+    user: `bademail@email.com`,
+    password: `Badpassword1!`
+};
+
+export const wrongPassword = {
+    user: `mooney@email.com`,
+    password: `luPin88?`
+};
+
