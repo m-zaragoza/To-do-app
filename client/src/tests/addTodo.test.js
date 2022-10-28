@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import AddTodo from '../components/todoComponents/AddTodo';
 
 
-describe(`Add to-do tests`, () => {
+xdescribe(`Add to-do tests`, () => {
 
     beforeEach(() => {
         render(<MemoryRouter><AddTodo /></MemoryRouter>)
